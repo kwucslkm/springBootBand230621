@@ -2,9 +2,17 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>saveForm</title>
 </head>
 <body>
-
+    <h2>saveForm.html</h2>
+    <div id="saveFormDiv" style="text-align: center; ">
+        <form action="/bandMemberPages/saveForm" method="post">
+            이메일: <input type="text" name="memberEmail" id="memberEmail"><br>
+            비밀번호:<input type="text" name="memberPassword" id="memberPassword"><br>
+            이름:<input type="text" name="memberName" id="memberName"><br>
+            <input type="submit" value="가입">
+        </form>
+    </div>
 </body>
 </html>

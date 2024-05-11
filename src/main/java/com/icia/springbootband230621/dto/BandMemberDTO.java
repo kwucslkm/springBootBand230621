@@ -15,6 +15,7 @@ public class BandMemberDTO {
     private Long id;
     private String memberEmail;
     private String memberPassword;
+    private String memberName;
     private String memberNickName;
     private String memberMobile;
     private String memberLocal;
