@@ -1,5 +1,6 @@
 package com.icia.springbootband230621.controller;
 
+import com.fasterxml.jackson.databind.deser.std.StringArrayDeserializer;
 import com.icia.springbootband230621.dto.BandMemberDTO;
 import com.icia.springbootband230621.service.BandMemberService;
 import lombok.RequiredArgsConstructor;
@@ -24,6 +25,10 @@ public class MemberController {
         System.out.println("bandMemberDTO = " + bandMemberDTO);
         bandMemberService.save(bandMemberDTO);
 //        System.out.println("===== saveForm connection test");
-        return "index";
+        return "bandMemberPages/bandMemberLogin";
+    }
+    @PostMapping("/bandMemberPages/bandMemberLogin")
+    public String findById(@ModelAttribute BandMemberDTO bandMemberDTO){
+        return "/bandMemberPages/bandMemberLogin";
     }
 }
