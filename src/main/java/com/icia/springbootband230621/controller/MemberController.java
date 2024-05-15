@@ -24,7 +24,6 @@ public class MemberController {
         System.out.println("MemberController.saveForm");
         System.out.println("bandMemberDTO = " + bandMemberDTO);
         bandMemberService.save(bandMemberDTO);
-//        System.out.println("===== saveForm connection test");
         return "bandMemberPages/bandMemberLogin";
     }
     @PostMapping("/bandMemberPages/bandMemberLogin")

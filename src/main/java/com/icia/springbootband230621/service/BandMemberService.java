@@ -13,6 +13,7 @@ public class BandMemberService {
     private final BandMemberRepository bandMemberRepository;
 
     public void save(BandMemberDTO bandMemberDTO){
+        System.out.println("bandMemberDTO = " + bandMemberDTO);
         BandMemberEntity bandMemberEntity =  BandMemberEntity.toBandMemberEntity(bandMemberDTO);
         bandMemberRepository.save(bandMemberEntity);
 

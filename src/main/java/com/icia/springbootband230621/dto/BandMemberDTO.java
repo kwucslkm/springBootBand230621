@@ -20,8 +20,8 @@ public class BandMemberDTO {
     private String memberMobile;
     private String memberLocal;
     private String memberInterest;
-    private LocalDateTime memberBirth;
-    private LocalDateTime memberCreateAt;
+    private String memberBirth;
+    private String memberCreateAt;
     private List<MultipartFile> memberProfileFile;
     private List<String> memberOriginalFileName;
     private List<String> memberStoredFileName;

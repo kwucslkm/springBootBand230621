@@ -42,17 +42,17 @@ public class BandMemberEntity {
     public static BandMemberEntity toBandMemberEntity(BandMemberDTO bandMemberDTO) {
         BandMemberEntity bandMemberEntity = new BandMemberEntity();
         bandMemberEntity.setMemberEmail(bandMemberDTO.getMemberEmail());
-        bandMemberEntity.setMemberPassword(bandMemberEntity.getMemberPassword());
-        bandMemberEntity.setMemberBirth(bandMemberEntity.getMemberBirth());
-        bandMemberEntity.setMemberCreateAt(bandMemberEntity.getMemberCreateAt());
-        bandMemberEntity.setMemberName(bandMemberEntity.getMemberName());
-        bandMemberEntity.setMemberNickName(bandMemberEntity.getMemberNickName());
-        bandMemberEntity.setMemberLocal(bandMemberEntity.getMemberLocal());
-        bandMemberEntity.setMemberMobile(bandMemberEntity.getMemberMobile());
-        bandMemberEntity.setMemberInterest(bandMemberEntity.getMemberInterest());
-        bandMemberEntity.setMemberProfileFile(bandMemberEntity.getMemberProfileFile());
-        bandMemberEntity.setMemberOriginalFileName(bandMemberEntity.getMemberOriginalFileName());
-        bandMemberEntity.setMemberStoredFileName(bandMemberEntity.getMemberStoredFileName());
+        bandMemberEntity.setMemberPassword(bandMemberDTO.getMemberPassword());
+        bandMemberEntity.setMemberBirth(bandMemberDTO.getMemberBirth());
+        bandMemberEntity.setMemberCreateAt(bandMemberDTO.getMemberCreateAt());
+        bandMemberEntity.setMemberName(bandMemberDTO.getMemberName());
+        bandMemberEntity.setMemberNickName(bandMemberDTO.getMemberNickName());
+        bandMemberEntity.setMemberLocal(bandMemberDTO.getMemberLocal());
+        bandMemberEntity.setMemberMobile(bandMemberDTO.getMemberMobile());
+        bandMemberEntity.setMemberInterest(bandMemberDTO.getMemberInterest());
+//        bandMemberEntity.setMemberProfileFile(bandMemberDTO.getMemberProfileFile());
+//        bandMemberEntity.setMemberOriginalFileName(bandMemberDTO.getMemberOriginalFileName());
+//        bandMemberEntity.setMemberStoredFileName(bandMemberDTO.getMemberStoredFileName());
 
         return bandMemberEntity;
     }
