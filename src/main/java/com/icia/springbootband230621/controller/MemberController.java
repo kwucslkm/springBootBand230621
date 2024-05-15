@@ -28,6 +28,7 @@ public class MemberController {
     }
     @PostMapping("/bandMemberPages/bandMemberLogin")
     public String findById(@ModelAttribute BandMemberDTO bandMemberDTO){
+
         return "/bandMemberPages/bandMemberLogin";
     }
 }
