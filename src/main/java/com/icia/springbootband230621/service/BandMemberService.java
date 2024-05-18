@@ -6,6 +6,8 @@ import com.icia.springbootband230621.repository.BandMemberRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -36,5 +38,19 @@ public class BandMemberService {
         }else {
             return null;
         }
+    }
+
+    public List<BandMemberDTO> findAll() {
+        List<BandMemberEntity> bandMemberEntityList = bandMemberRepository.findAll();
+        List<BandMemberDTO> memberDTOList = new ArrayList<>();
+        for (BandMemberEntity bandMemberEntity: bandMemberEntityList){
+            memberDTOList.add(BandMemberDTO.toMemberDTO(bandMemberEntity));
+        }
+        return memberDTOList;
+    }
+
+    public BandMemberDTO findById(Long id) {
+        Optional<BandMemberEntity> optionalBandMemberEntity = bandMemberRepository.findById(id);
+        return BandMemberDTO.toMemberDTO(optionalBandMemberEntity.get());
     }
 }

@@ -3,14 +3,14 @@ package com.icia.springbootband230621.controller;
 import com.fasterxml.jackson.databind.deser.std.StringArrayDeserializer;
 import com.icia.springbootband230621.dto.BandMemberDTO;
 import com.icia.springbootband230621.service.BandMemberService;
+import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpSession;
+import java.util.List;
 
 @Controller
 @RequiredArgsConstructor
@@ -39,5 +39,18 @@ public class MemberController {
             return "bandMemberPages/bandMemberLogin";
         }
 
+    }
+    @GetMapping("/bandMemberPages/memberList")
+    public String findAll(Model model){
+        List<BandMemberDTO> bandMemberDTOList = bandMemberService.findAll();
+        model.addAttribute("memberList", bandMemberDTOList);
+        return "bandMemberPages/memberList";
+    }
+@GetMapping("/member/{id}")
+    public String findById(@PathVariable Long id, Model model){
+        BandMemberDTO memberDTO = bandMemberService.findById(id);
+        model.addAttribute("member", memberDTO);
+
+        return "bandMemberPages/memberDetail";
     }
 }
