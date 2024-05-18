@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import javax.servlet.http.HttpSession;
+
 @Controller
 @RequiredArgsConstructor
 public class MemberController {
@@ -27,8 +29,15 @@ public class MemberController {
         return "bandMemberPages/bandMemberLogin";
     }
     @PostMapping("/bandMemberPages/bandMemberLogin")
-    public String findById(@ModelAttribute BandMemberDTO bandMemberDTO){
+    public String login(@ModelAttribute BandMemberDTO bandMemberDTO,
+                        HttpSession httpSession){
+        BandMemberDTO loginResult = bandMemberService.login(bandMemberDTO);
+        if (loginResult != null){
+            httpSession.setAttribute("loginEmail", loginResult.getMemberEmail());
+            return "main";
+        }else {
+            return "bandMemberPages/bandMemberLogin";
+        }
 
-        return "/bandMemberPages/bandMemberLogin";
     }
 }

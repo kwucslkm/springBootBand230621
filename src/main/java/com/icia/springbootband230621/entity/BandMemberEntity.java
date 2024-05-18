@@ -56,4 +56,12 @@ public class BandMemberEntity {
 
         return bandMemberEntity;
     }
+
+    public static BandMemberEntity toMemberEntity(BandMemberDTO bandMemberDTO) {
+        BandMemberEntity memberEntity = new BandMemberEntity();
+        memberEntity.setMemberEmail(bandMemberDTO.getMemberEmail());
+        memberEntity.setMemberPassword(bandMemberDTO.getMemberPassword());
+
+        return memberEntity;
+    }
 }

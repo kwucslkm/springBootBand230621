@@ -1,5 +1,6 @@
 package com.icia.springbootband230621.dto;
 
+import com.icia.springbootband230621.entity.BandMemberEntity;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -26,6 +27,14 @@ public class BandMemberDTO {
     private List<String> memberOriginalFileName;
     private List<String> memberStoredFileName;
 
+    public static BandMemberDTO toMemberDTO(BandMemberEntity bandMemberEntity){
+        BandMemberDTO memberDTO = new BandMemberDTO();
+        memberDTO.setId(bandMemberEntity.getId());
+        memberDTO.setMemberEmail(bandMemberEntity.getMemberEmail());
+        memberDTO.setMemberName(bandMemberEntity.getMemberName());
+        memberDTO.setMemberPassword(bandMemberEntity.getMemberPassword());
+        return memberDTO;
+    }
 
 
 }
