@@ -58,4 +58,10 @@ public class BandMemberService {
         Optional<BandMemberEntity> optionalBandMemberEntity = bandMemberRepository.findByMemberEmail(memberEmail);
         return BandMemberDTO.toMemberDTO(optionalBandMemberEntity.get());
     }
+
+    public void update(BandMemberDTO bandMemberDTO) {
+//        System.out.println("bandMemberDTO = " + bandMemberDTO);
+        BandMemberEntity bandMemberEntity =  BandMemberEntity.toBandMemberEntityWithId(bandMemberDTO);
+        bandMemberRepository.save(bandMemberEntity);
+    }
 }

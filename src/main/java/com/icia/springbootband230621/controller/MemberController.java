@@ -38,7 +38,6 @@ public class MemberController {
         }else {
             return "bandMemberPages/bandMemberLogin";
         }
-
     }
     @GetMapping("/bandMemberPages/memberList")
     public String findAll(Model model){
@@ -50,14 +49,27 @@ public class MemberController {
     public String findById(@PathVariable Long id, Model model){
         BandMemberDTO memberDTO = bandMemberService.findById(id);
         model.addAttribute("member", memberDTO);
-
         return "bandMemberPages/memberDetail";
     }
 @GetMapping("/bandMemberPages/bandMemberUpdate/{memberEmail}")
-    public String memberUpdate(@PathVariable String memberEmail, Model model){
-       BandMemberDTO memberDTO=  bandMemberService.findByMemberEmail(memberEmail);
+    public String memberUpdateForm(@PathVariable String memberEmail, Model model){
+       BandMemberDTO memberDTO =  bandMemberService.findByMemberEmail(memberEmail);
        System.out.println("memberDTO = " + memberDTO);
        model.addAttribute("member", memberDTO);
        return "bandMemberPages/memberUpdateForm";
-}
+    }
+
+@GetMapping("bandMemberPages/bandMemberUpdate")
+    public String memberUpdateFormM(HttpSession httpSession, Model model) {
+    String memberEmail = (String) httpSession.getAttribute("loginEmail");
+    BandMemberDTO memberDTO = bandMemberService.findByMemberEmail(memberEmail);
+//    System.out.println("memberDTO = " + memberDTO);
+    model.addAttribute("member", memberDTO);
+    return "bandMemberPages/memberUpdateForm";
+    }
+    @PostMapping("/bandMemberPages/updateForm")
+    public String memberUpdate(@ModelAttribute BandMemberDTO bandMemberDTO){
+        bandMemberService.update(bandMemberDTO);
+        return "redirect:/member/"+bandMemberDTO.getId();
+    }
 }
