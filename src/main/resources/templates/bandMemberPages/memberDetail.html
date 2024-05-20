@@ -20,6 +20,12 @@
         <td th:text="${member.memberPassword}"></td>
         <td th:text="${member.memberName}"></td>
     </tr>
+    <tr>
+        <td>
+            <a th:href="@{|/bandMemberPages/bandMemberUpdate/${member.memberEmail}|}">정보수정</a>
+<!--            <a th:href="@{|/member/${member.memberEmail}|}">정보수정</a>-->
+        </td>
+    </tr>
 </table>
 </body>
 </html>

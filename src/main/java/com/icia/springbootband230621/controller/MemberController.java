@@ -53,4 +53,11 @@ public class MemberController {
 
         return "bandMemberPages/memberDetail";
     }
+@GetMapping("/bandMemberPages/bandMemberUpdate/{memberEmail}")
+    public String memberUpdate(@PathVariable String memberEmail, Model model){
+       BandMemberDTO memberDTO=  bandMemberService.findByMemberEmail(memberEmail);
+       System.out.println("memberDTO = " + memberDTO);
+       model.addAttribute("member", memberDTO);
+       return "bandMemberPages/memberUpdateForm";
+}
 }

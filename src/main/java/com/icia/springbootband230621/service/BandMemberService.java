@@ -53,4 +53,9 @@ public class BandMemberService {
         Optional<BandMemberEntity> optionalBandMemberEntity = bandMemberRepository.findById(id);
         return BandMemberDTO.toMemberDTO(optionalBandMemberEntity.get());
     }
+
+    public BandMemberDTO findByMemberEmail(String memberEmail) {
+        Optional<BandMemberEntity> optionalBandMemberEntity = bandMemberRepository.findByMemberEmail(memberEmail);
+        return BandMemberDTO.toMemberDTO(optionalBandMemberEntity.get());
+    }
 }
