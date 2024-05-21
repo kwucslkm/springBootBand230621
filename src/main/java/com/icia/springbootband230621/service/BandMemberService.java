@@ -60,8 +60,13 @@ public class BandMemberService {
     }
 
     public void update(BandMemberDTO bandMemberDTO) {
-//        System.out.println("bandMemberDTO = " + bandMemberDTO);
+        System.out.println("bandMemberDTO = " + bandMemberDTO);
         BandMemberEntity bandMemberEntity =  BandMemberEntity.toBandMemberEntityWithId(bandMemberDTO);
         bandMemberRepository.save(bandMemberEntity);
+    }
+
+    public void deleteById(Long id) {
+        bandMemberRepository.deleteById(id);
+        
     }
 }

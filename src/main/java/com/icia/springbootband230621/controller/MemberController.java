@@ -28,6 +28,10 @@ public class MemberController {
         bandMemberService.save(bandMemberDTO);
         return "bandMemberPages/bandMemberLogin";
     }
+    @GetMapping("/bandMemberPages/memberLogin")
+    public String loginForm(){
+        return "bandMemberPages/bandMemberLogin";
+    }
     @PostMapping("/bandMemberPages/bandMemberLogin")
     public String login(@ModelAttribute BandMemberDTO bandMemberDTO,
                         HttpSession httpSession){
@@ -54,22 +58,28 @@ public class MemberController {
 @GetMapping("/bandMemberPages/bandMemberUpdate/{memberEmail}")
     public String memberUpdateForm(@PathVariable String memberEmail, Model model){
        BandMemberDTO memberDTO =  bandMemberService.findByMemberEmail(memberEmail);
-       System.out.println("memberDTO = " + memberDTO);
+//       System.out.println("memberDTO = " + memberDTO);
        model.addAttribute("member", memberDTO);
        return "bandMemberPages/memberUpdateForm";
     }
 
 @GetMapping("bandMemberPages/bandMemberUpdate")
     public String memberUpdateFormM(HttpSession httpSession, Model model) {
-    String memberEmail = (String) httpSession.getAttribute("loginEmail");
-    BandMemberDTO memberDTO = bandMemberService.findByMemberEmail(memberEmail);
+        System.out.println("넘어는 오나=====");
+        String memberEmail = (String) httpSession.getAttribute("loginEmail");
+        BandMemberDTO memberDTO = bandMemberService.findByMemberEmail(memberEmail);
 //    System.out.println("memberDTO = " + memberDTO);
-    model.addAttribute("member", memberDTO);
-    return "bandMemberPages/memberUpdateForm";
+        model.addAttribute("member", memberDTO);
+        return "bandMemberPages/memberUpdateForm";
     }
-    @PostMapping("/bandMemberPages/updateForm")
+@PostMapping("/bandMemberPages/bandMemberUpdate")
     public String memberUpdate(@ModelAttribute BandMemberDTO bandMemberDTO){
         bandMemberService.update(bandMemberDTO);
         return "redirect:/member/"+bandMemberDTO.getId();
     }
+@GetMapping("/member/delete/{id}")
+    public String memberDelete(@PathVariable Long id){
+        bandMemberService.deleteById(id);
+        return "redirect:/bandMemberPages/memberList";
+}
 }

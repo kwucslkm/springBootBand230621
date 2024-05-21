@@ -4,10 +4,28 @@
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
-<body>
-  session값 확인 : <P th:text="${session.loginEmail}"></P>
-    <h2>main.html</h2>
+<style>
 
-    <a href="bandMemberPages/bandMemberUpdate">내 쩡보수정</a>
+#main {
+    border: 1px solid red;
+    padding: 30px;
+    width: 200px;
+    margin : auto;
+    text-align: center;
+    /*display: flex;/*/
+    justify-content: center;
+    /*vertical-align: center;*/
+}
+</style>
+<body>
+<div id="main">
+    <div>
+      session값 확인 : <P th:text="${session.loginEmail}"></P>
+    </div>
+    <h2>main.html</h2>
+    <div>
+        <a href="/bandMemberPages/bandMemberUpdate">내 쩡보수정</a>
+    </div>
+</div>
 </body>
 </html>

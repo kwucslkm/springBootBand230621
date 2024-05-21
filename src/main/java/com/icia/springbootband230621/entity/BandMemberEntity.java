@@ -43,13 +43,13 @@ public class BandMemberEntity {
         BandMemberEntity bandMemberEntity = new BandMemberEntity();
         bandMemberEntity.setMemberEmail(bandMemberDTO.getMemberEmail());
         bandMemberEntity.setMemberPassword(bandMemberDTO.getMemberPassword());
-        bandMemberEntity.setMemberBirth(bandMemberDTO.getMemberBirth());
-        bandMemberEntity.setMemberCreateAt(bandMemberDTO.getMemberCreateAt());
         bandMemberEntity.setMemberName(bandMemberDTO.getMemberName());
-        bandMemberEntity.setMemberNickName(bandMemberDTO.getMemberNickName());
-        bandMemberEntity.setMemberLocal(bandMemberDTO.getMemberLocal());
-        bandMemberEntity.setMemberMobile(bandMemberDTO.getMemberMobile());
-        bandMemberEntity.setMemberInterest(bandMemberDTO.getMemberInterest());
+//        bandMemberEntity.setMemberBirth(bandMemberDTO.getMemberBirth());
+//        bandMemberEntity.setMemberCreateAt(bandMemberDTO.getMemberCreateAt());
+//        bandMemberEntity.setMemberNickName(bandMemberDTO.getMemberNickName());
+//        bandMemberEntity.setMemberLocal(bandMemberDTO.getMemberLocal());
+//        bandMemberEntity.setMemberMobile(bandMemberDTO.getMemberMobile());
+//        bandMemberEntity.setMemberInterest(bandMemberDTO.getMemberInterest());
 //        bandMemberEntity.setMemberProfileFile(bandMemberDTO.getMemberProfileFile());
 //        bandMemberEntity.setMemberOriginalFileName(bandMemberDTO.getMemberOriginalFileName());
 //        bandMemberEntity.setMemberStoredFileName(bandMemberDTO.getMemberStoredFileName());
@@ -58,16 +58,16 @@ public class BandMemberEntity {
     }
     public static BandMemberEntity toBandMemberEntityWithId(BandMemberDTO bandMemberDTO) {
         BandMemberEntity bandMemberEntity = new BandMemberEntity();
-        bandMemberEntity.setMemberEmail(bandMemberDTO.getMemberEmail());
         bandMemberEntity.setId(bandMemberDTO.getId());
+        bandMemberEntity.setMemberEmail(bandMemberDTO.getMemberEmail());
         bandMemberEntity.setMemberPassword(bandMemberDTO.getMemberPassword());
-        bandMemberEntity.setMemberBirth(bandMemberDTO.getMemberBirth());
-        bandMemberEntity.setMemberCreateAt(bandMemberDTO.getMemberCreateAt());
         bandMemberEntity.setMemberName(bandMemberDTO.getMemberName());
-        bandMemberEntity.setMemberNickName(bandMemberDTO.getMemberNickName());
-        bandMemberEntity.setMemberLocal(bandMemberDTO.getMemberLocal());
-        bandMemberEntity.setMemberMobile(bandMemberDTO.getMemberMobile());
-        bandMemberEntity.setMemberInterest(bandMemberDTO.getMemberInterest());
+//        bandMemberEntity.setMemberBirth(bandMemberDTO.getMemberBirth());
+//        bandMemberEntity.setMemberCreateAt(bandMemberDTO.getMemberCreateAt());
+//        bandMemberEntity.setMemberNickName(bandMemberDTO.getMemberNickName());
+//        bandMemberEntity.setMemberLocal(bandMemberDTO.getMemberLocal());
+//        bandMemberEntity.setMemberMobile(bandMemberDTO.getMemberMobile());
+//        bandMemberEntity.setMemberInterest(bandMemberDTO.getMemberInterest());
 //        bandMemberEntity.setMemberProfileFile(bandMemberDTO.getMemberProfileFile());
 //        bandMemberEntity.setMemberOriginalFileName(bandMemberDTO.getMemberOriginalFileName());
 //        bandMemberEntity.setMemberStoredFileName(bandMemberDTO.getMemberStoredFileName());
