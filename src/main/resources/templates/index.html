@@ -1,10 +1,7 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<th:block th:replace="/component/header :: header"></th:block>
 
-</head>
 <style>
     #indexMain {
         border: 1px solid red;
@@ -17,16 +14,23 @@
         /*vertical-align: center;*/
     }
 </style>
+
+</html>
+
 <body>
+<th:block layout:fragment="nav"></th:block>
 
-    <h2 style ="text-align: center">index.html</h2>
-    <div id="indexMain">
-        <a href = "/bandMemberPages/saveForm">회원가입 </a><br><br>
-        <a href = "/bandMemberPages/memberLogin">로그인</a><br><br>
-        <a href = "/bandMemberPages/memberList">회원목록</a><br>
+<h2 style ="text-align: center">index.html</h2>
+<div id="indexMain">
+    <a href = "/bandMemberPages/saveForm">회원가입 </a><br><br>
+    <a href = "/bandMemberPages/memberLogin">로그인</a><br><br>
+    <a href = "/bandMemberPages/memberList">회원목록</a><br>
 
-<!--    <a href="https://www.naver.com">네이버</a><br>-->
-<!--    <a href="https://www.google.com">구글</a>-->
-    </div>
+    <!--    <a href="https://www.naver.com">네이버</a><br>-->
+    <!--    <a href="https://www.google.com">구글</a>-->
+</div>
 </body>
+
+
+<th:block th:replace="/layout/fragments/footer :: footerLayout"></th:block>
 </html>

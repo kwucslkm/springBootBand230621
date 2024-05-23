@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <th:block th:fragment="nav">
+    <nav>
+        <style>
+            #nav{
+                height: 40px;
+                background-color: black;
+            }
+            #hListL li a{
+                text-decoration-line: none;
+                color:white;
+            }
+            #hListL li{
+                float: left;
+                list-style: none;
+                margin-right: 8px;
+                text-decoration-line: none;
+                padding-top:7px;
+            }
+            #hListR li a{
+                text-decoration-line: none;
+                color:yellow;
+            }
+            #hListR,
+            #hListR li{
+                float: right;
+                list-style: none;
+                margin-right: 8px;
+                text-decoration-line: none;
+                padding-top:4px;
+            }
+        </style>
+
+        <div id="nav">
+            <ul id="hListL">
+                <li><a href = "/index">홈으로 </a></li>
+                <li><a href = "/bandMemberPages/saveForm">회원가입</a></li>
+                <li><a href = "/bandMemberPages/memberLogin">로그인</a></li>
+                <li><a href = "/bandMemberPages/memberList">회원목록</a></li>
+                <div id="hListR">
+                    <li><a HREF="bandMeberPages/mypage">로그아웃 </a> </li>
+                    <li><a HREF="bandMeberPages/mypage">마이페이지</a> </li>
+                </div>
+            </ul>
+        </div>
+    </nav>
+</th:block>
+</html>

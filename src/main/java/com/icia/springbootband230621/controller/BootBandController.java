@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/bandMember")
 public class BootBandController {
     @GetMapping("/save")
+
     public String saveForm(){
         return "bandMemberPages/saveForm";
     }
