@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layout/layout}">
+<th:block layout:fragment="content">
+
+<style>
+
+#loginBox {
+    border: 1px solid lightgray;
+    background-color: lightgray;
+    padding: 5px;
+    width: 200px;
+    margin : auto;
+    text-align: center;
+    /*display: flex;/*/
+    justify-content: center;
+    /*vertical-align: center;*/
+}
+#mainloginBtn {
+    background-color: lightblue;
+    width : 190px;
+}
+</style>
+
+
+    <div id="loginBox">
+<!--      session값 확인 : <P th:text="${session.loginEmail}"></P>-->
+        <button id = "mainloginBtn" name = "mainloginBtn" >로그인</button>
+    </div>
+
+
+
+</th:block>
+</html>

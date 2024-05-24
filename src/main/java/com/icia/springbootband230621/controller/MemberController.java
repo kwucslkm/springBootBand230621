@@ -1,9 +1,7 @@
 package com.icia.springbootband230621.controller;
 
-import com.fasterxml.jackson.databind.deser.std.StringArrayDeserializer;
 import com.icia.springbootband230621.dto.BandMemberDTO;
 import com.icia.springbootband230621.service.BandMemberService;
-import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -17,7 +15,11 @@ import java.util.List;
 public class MemberController {
     private final BandMemberService bandMemberService;
     //회원가입 페이지 출력 요청
-    @GetMapping("/bandMemberPages/saveForm")
+    @GetMapping("/main")
+    public String goMain(){
+        return "home";
+    }
+    @GetMapping("/memberPages/saveForm")
     public String save(){
         return "bandMemberPages/saveForm";
     }
@@ -38,7 +40,7 @@ public class MemberController {
         BandMemberDTO loginResult = bandMemberService.login(bandMemberDTO);
         if (loginResult != null){
             httpSession.setAttribute("loginEmail", loginResult.getMemberEmail());
-            return "main";
+            return "home";
         }else {
             return "bandMemberPages/bandMemberLogin";
         }
