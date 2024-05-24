@@ -1,9 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>saveForm</title>
-</head>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layout/layout}">
+<th:block layout:fragment="content">
 <style>
     #saveFormDiv {
         text-align: center;
@@ -16,7 +13,7 @@
 
     }
 </style>
-<body>
+
     <h2 style ="text-align: center;">saveForm.html</h2>
         <form action="/bandMemberPages/saveForm" method="post">
             <div id="saveFormDiv">
@@ -26,5 +23,5 @@
                 <input type="submit" value="가입">
             </div>
         </form>
-</body>
+</th:block>
 </html>

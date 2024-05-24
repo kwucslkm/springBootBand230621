@@ -30,7 +30,7 @@ public class MemberController {
         bandMemberService.save(bandMemberDTO);
         return "bandMemberPages/bandMemberLogin";
     }
-    @GetMapping("/bandMemberPages/memberLogin")
+    @GetMapping("/MemberPages/memberLogin")
     public String loginForm(){
         return "bandMemberPages/bandMemberLogin";
     }
