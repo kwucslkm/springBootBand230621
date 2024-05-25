@@ -6,15 +6,22 @@
 
         }
         #memberDetailTable,
-        #memberDetailTable tr,
-        #memberDetailTable tr th,
-        #memberDetailTable tr td{
-            border: solid 2px cornflowerblue;
-            border-radius: 3em;
-            border-collapse: collapse;
-            margin : auto;
-            text-align: center;
+         #memberDetailTable tr,
+         #memberDetailTable tr th,
+         #memberDetailTable tr td{
+             border: solid 2px cornflowerblue;
+             border-radius: 3em;
+             border-collapse: collapse;
+             margin : auto;
+             text-align: center;
+         }
+        #memberDetailTable input {
+            border-width: 0;
         }
+        #memberDetailTable input:focus{
+            outline: none;
+        }
+
     </style>
     <div id ="memberDetailDiv">
 <table id = "memberDetailTable">
@@ -36,7 +43,7 @@
     </tr>
 
     <tr>
-        <td>
+        <td colspan="2">
             <a th:href="@{|/bandMemberPages/bandMemberUpdate/${member.memberEmail}|}">정보수정</a>
         </td>
     </tr>
