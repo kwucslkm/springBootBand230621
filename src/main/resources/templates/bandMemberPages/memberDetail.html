@@ -5,17 +5,34 @@
 <table>
     <tr>
         <th>memberId</th>
-        <th>memberEmail</th>
-        <th>memberPassword</th>
-        <th>memberName</th>
-
+        <td th:text="${member.id}"></td>
     </tr>
     <tr>
-        <td th:text="${member.id}"></td>
+        <th>memberEmail</th>
         <td th:text="${member.memberEmail}"></td>
+    </tr>
+    <tr>
+        <th>memberPassword</th>
         <td th:text="${member.memberPassword}"></td>
+    </tr>
+    <tr>
+        <th>memberName</th>
         <td th:text="${member.memberName}"></td>
     </tr>
+
+<!--    <tr>-->
+<!--        <th>memberId</th>-->
+<!--        <th>memberEmail</th>-->
+<!--        <th>memberPassword</th>-->
+<!--        <th>memberName</th>-->
+
+<!--    </tr>-->
+<!--    <tr>-->
+<!--        <td th:text="${member.id}"></td>-->
+<!--        <td th:text="${member.memberEmail}"></td>-->
+<!--        <td th:text="${member.memberPassword}"></td>-->
+<!--        <td th:text="${member.memberName}"></td>-->
+<!--    </tr>-->
     <tr>
         <td>
             <a th:href="@{|/bandMemberPages/bandMemberUpdate/${member.memberEmail}|}">정보수정</a>
