@@ -40,7 +40,7 @@ public class MemberController {
         BandMemberDTO loginResult = bandMemberService.login(bandMemberDTO);
         if (loginResult != null){
             httpSession.setAttribute("loginEmail", loginResult.getMemberEmail());
-            return "home";
+            return "redirect:/bandMemberPages/memberList";
         }else {
             return "bandMemberPages/bandMemberLogin";
         }
@@ -53,7 +53,15 @@ public class MemberController {
     }
 @GetMapping("/member/{id}")
     public String findById(@PathVariable Long id, Model model){
+    System.out.println("넘어오나 findbyid");
         BandMemberDTO memberDTO = bandMemberService.findById(id);
+        model.addAttribute("member", memberDTO);
+        return "bandMemberPages/memberDetail";
+    }
+@GetMapping("/member/fromNav/{memberEmail}")
+    public String findByEmail(@PathVariable String memberEmail, Model model){
+        System.out.println("연결되나 memberEmail =====> " + memberEmail);
+        BandMemberDTO memberDTO =  bandMemberService.findByMemberEmail(memberEmail);
         model.addAttribute("member", memberDTO);
         return "bandMemberPages/memberDetail";
     }
