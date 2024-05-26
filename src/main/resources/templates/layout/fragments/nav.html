@@ -42,7 +42,9 @@
                 <li><a href = "/main">홈으로 </a></li>
 <!--                <li><a href = "/memberPages/saveForm">회원가입</a></li>-->
 <!--                <li><a href = "/bandMemberPages/memberLogin">로그인</a></li>-->
-                <li><a href = "/bandMemberPages/memberList">회원목록</a></li>
+                <span th:if="${session.loginEmail != null && session.loginEmail == 'kwucsani'}">
+                    <li><a href = "/bandMemberPages/memberList">회원목록</a></li>
+                </span>
                 <div id="hListR">
 
                     <span th:if="${session.loginEmail != null}">
@@ -51,7 +53,7 @@
                         <li><span>님 환영합니다.</span><span th:text="${session.loginEmail}"></span></li>
                     </span>
                     <span th:unless="${session.loginEmail != null}">
-                        <li><span>사이트맵</span></li>
+                        <li><a href="/bandMeberPages/mypage">사이트맵</a></li>
                     </span>
 <!--                    <th:block th:if="${session.loginEmail != null}">-->
 <!--                        <li><a th:href="@{|/member/${session.loginEmail}|}">마이페이지</a></li>-->

@@ -92,4 +92,11 @@ public class MemberController {
         bandMemberService.deleteById(id);
         return "redirect:/bandMemberPages/memberList";
 }
+@GetMapping("/bandMeberPages/mypage")
+    public String logout(HttpSession httpSession, Model model){
+        httpSession.invalidate();
+        model.addAttribute("logoutValue","1");
+        return "home";
+
+}
 }

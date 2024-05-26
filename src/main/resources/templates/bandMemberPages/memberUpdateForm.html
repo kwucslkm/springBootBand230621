@@ -4,7 +4,6 @@
 <style>
     #saveFormDiv {
         text-align: center;
-
         border: solid 1px cornflowerblue;
         border-radius: 5px;
         justify-content: center;
@@ -12,46 +11,47 @@
         padding: 10px 1px;
         margin : auto;
     }
+    #saveFormDiv input{
+        border:none;
+    }
     #submitUpdate{
         text-align: center;
         margin: 15px 1px;
     }
-
     #updateFormTable,
     #updateFormTable tr,
     #updateFormTable tr th,
     #updateFormTable tr td{
         border: solid 2px cornflowerblue;
-        border-radius: 3em;
+        border-radius: 1em;
         border-collapse: collapse;
         margin : auto;
         text-align: center;
-    }
 </style>
     <h2 style ="text-align: center;">updateForm.html</h2>
     <form action="/bandMemberPages/bandMemberUpdate" method="post">
         <div id="saveFormDiv">
             <table id="updateFormTable">
-            <tr>
-                <th>회원id</th>
-                <td><input type="text" readonly name="id" id="id" th:value="${member.id}"></td>
-            </tr>
+                <tr>
+                    <th>회원id</th>
+                    <td><input type="text" readonly name="id" id="id" th:value="${member.id}"></td>
+                </tr>
                 <tr>
                     <th>이메일</th>
                     <td><input type="text" readonly name="memberEmail" id="memberEmail" th:value="${member.memberEmail}"></td>
                 </tr>
                 <tr>
                     <th>비밀번호</th>
-                    <td><input type="text" readonly name="memberPassword" id="memberPassword" th:value="${member.memberPassword}"></td>
+                    <td><input type="text"  name="memberPassword" id="memberPassword" th:value="${member.memberPassword}"></td>
                 </tr>
                 <tr>
                     <th>이름</th>
-                    <td><input type="text" readonly name="memberName" id="memberName" th:value="${member.memberName}"></td>
+                    <td><input type="text" name="memberName" id="memberName" th:value="${member.memberName}"></td>
                 </tr>
+            </table>
             <div id="submitUpdate">
                 <input type="submit" value="수정">
             </div>
-            </table>
 
         </div>
     </form>
