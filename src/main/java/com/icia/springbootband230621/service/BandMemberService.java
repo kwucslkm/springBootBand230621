@@ -20,11 +20,8 @@ public class BandMemberService {
         System.out.println("bandMemberDTO = " + bandMemberDTO);
         BandMemberEntity bandMemberEntity =  BandMemberEntity.toBandMemberEntity(bandMemberDTO);
         bandMemberRepository.save(bandMemberEntity);
-
     }
-
     public BandMemberDTO login(BandMemberDTO bandMemberDTO) {
-
         Optional<BandMemberEntity> byMemberEmail = bandMemberRepository.findByMemberEmail(bandMemberDTO.getMemberEmail());
         if (byMemberEmail.isPresent()) {
             BandMemberEntity memberEntity = byMemberEmail.get();
@@ -39,7 +36,6 @@ public class BandMemberService {
             return null;
         }
     }
-
     public List<BandMemberDTO> findAll() {
         List<BandMemberEntity> bandMemberEntityList = bandMemberRepository.findAll();
         List<BandMemberDTO> memberDTOList = new ArrayList<>();
@@ -48,7 +44,6 @@ public class BandMemberService {
         }
         return memberDTOList;
     }
-
     public BandMemberDTO findById(Long id) {
         Optional<BandMemberEntity> optionalBandMemberEntity = bandMemberRepository.findById(id);
         return BandMemberDTO.toMemberDTO(optionalBandMemberEntity.get());

@@ -48,12 +48,15 @@
             오늘도 좋은하루 되세요.^^
         </div>
 <!--      session값 확인 : <P th:text="${session.loginEmail}"></P>-->
-        <button id = "mainLoginBtn" name = "mainLoginBtn" onclick="location.href ='/MemberPages/memberLogin';"> 로그인</button><br>
-        <div id="saveBox" name="saveBox">
-            <a href = "/memberPages/saveForm">회원가입</a>&nbsp;.&nbsp;
-            <a href = "/bandMemberPages/saveForm">아이디찾기</a>&nbsp;.&nbsp;
-            <a href = "/bandMemberPages/saveForm">비밀번호찾기</a>
-        </div>
+        <th:block th:if="${session.loginEmail == null}">
+        <button id = "mainLoginBtn" onclick="location.href ='/MemberPages/memberLogin';"> 로그인</button><br>
+
+            <div id="saveBox" name="saveBox">
+                <a href = "/memberPages/saveForm">회원가입</a>&nbsp;.&nbsp;
+                <a href = "/bandMemberPages/saveForm">아이디찾기</a>&nbsp;.&nbsp;
+                <a href = "/bandMemberPages/saveForm">비밀번호찾기</a>
+            </div>
+        </th:block>
     </div>
 
 </th:block>
